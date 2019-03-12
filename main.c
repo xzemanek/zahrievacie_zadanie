@@ -1,32 +1,19 @@
 #include <stdio.h>
 
-void vypis_pole(int *p, int n)
+void nacitaj_pole(int A[])
 {
 	int i;
 	
-	for(i=0;i<n;i++)
-	{ 
-		printf("%d,",p[i]);
-		p++;
+	for(i=0;i<5;i++)
+	{
+		scanf("%d",&A[i]);
 	}
-	printf("\n");
 }
 
-void otoc_pole(int *p,int n)
+main()
 {
-	
-	
+	int A[5]={}, B[5]={};
+	nacitaj_pole(A);
+	nacitaj_pole(B);
 	
 }
-
-int main()
-{
-	int n;
-	n=5;
-	int A[n];
-	
-	vypis_pole(A,n);
-}
-
-
-
