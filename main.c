@@ -8,6 +8,21 @@ void nacitaj_pole(int A[])
 	{
 		scanf("%d",&A[i]);
 	}
+	printf("\n");
+}
+
+int zhoda(int A[], int b)
+{
+	int i, pocitadlo=0;
+	
+	for(i=0;i<5;i++)
+	{
+		if(b==A[i])
+		{
+			pocitadlo++;
+		}
+	}
+	return pocitadlo;
 }
 
 main()
