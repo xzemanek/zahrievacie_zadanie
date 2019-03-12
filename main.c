@@ -37,6 +37,7 @@ void zjednotenie(int A[], int B[], int C[])
 	for(i=0;i<5;i++)
 	{
 		zhoda(A, B[i]);
+		y=zhoda;
 		
 		if(y==0)
 		{
@@ -46,11 +47,26 @@ void zjednotenie(int A[], int B[], int C[])
 	}
 }
 
-
+void prienik(int A[], int B[], int D[])
+{
+	int i, y, x=0;
+	
+	for(i=0;i<5;i++)
+	{
+		zhoda(A, B[i]);
+		y=zhoda;
+		
+		if(y=!0)
+		{
+			D[x]=B[i];
+			x++;
+		}
+	}
+}
 
 main()
 {
-	int A[5]={}, B[5]={}, C[10]={};
+	int A[5]={}, B[5]={}, C[10]={}, D[5]={};
 	nacitaj_pole(A);
 	nacitaj_pole(B);
 	
