@@ -25,9 +25,9 @@ int zhoda(int A[], int b)
 	return pocitadlo;
 }
 
-void zjednotenie(int A[], int B[], int C[])
+void zjednotenie(int A[], int B[], int C[], int *x)
 {
-	int i, x=5, y;
+	int i, y, k=*x;
 	
 	for(i=0;i<5;i++)
 	{
@@ -36,38 +36,53 @@ void zjednotenie(int A[], int B[], int C[])
 	
 	for(i=0;i<5;i++)
 	{
-		zhoda(A, B[i]);
-		y=zhoda;
-		
+		y=zhoda(A, B[i]);
+	
 		if(y==0)
 		{
-			C[x]=B[i];
-			x++;
+			C[k]=B[i];
+			k++;
 		}
 	}
+	*x=k;
 }
 
-void prienik(int A[], int B[], int D[])
+void prienik(int A[], int B[], int D[],int *z)
 {
-	int i, y, x=0;
+	int i, y, m=*z;
 	
 	for(i=0;i<5;i++)
 	{
-		zhoda(A, B[i]);
-		y=zhoda;
+		y=zhoda(A, B[i]);
 		
 		if(y=!0)
 		{
-			D[x]=B[i];
-			x++;
+			D[m]=B[i];
+			m++;
 		}
 	}
+	*z=m;
 }
 
 main()
 {
-	int A[5]={}, B[5]={}, C[10]={}, D[5]={};
+	int A[5], B[5], C[10], D[5],i, x=5, z=0;
 	nacitaj_pole(A);
 	nacitaj_pole(B);
+	
+	zjednotenie(A,B,C,&x);
+	prienik(A,B,D,&z);
+	
+	for(i=0;i<x;i++)
+	{
+		printf("%d  ",C[i]);
+	}
+	
+	printf("\n");
+	
+	for(i=0;i<z;i++)
+	{
+		printf("%d  ",D[i]);
+	}
 	
 }
